@@ -13,8 +13,9 @@ export default function ajax (url, data = {}, type = 'GET') {
       }
       promise = axios.get(url)
     } else {
-      promise = axios.get(url, data)
+      promise = axios.post(url, data)
     }
+
     promise.then(function (response) { // 成功
       resolve(response.data)
     })
